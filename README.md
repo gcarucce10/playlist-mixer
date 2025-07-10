@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎵 Playlist Mixer
 
-## Getting Started
+**A funcionalidade que faltava no Spotify**
 
-First, run the development server:
+Uma aplicação web que permite a criação automática e randomizada de playlists a partir de álbuns e playlists existentes, com controle granular sobre cada música através de pesos e parâmetros personalizáveis.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📋 Finalidade
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O **Playlist Mixer** resolve o problema de criar playlists personalizadas de forma inteligente, permitindo que usuários:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Combinem diferentes fontes musicais (álbuns e playlists)
+- Controlem a probabilidade de cada música aparecer na playlist final
+- Definam músicas obrigatórias que sempre devem estar presentes
+- Controlem se músicas podem se repetir na playlist gerada
+- Gerem playlists automáticas com base em critérios personalizados
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎯 Caso de Uso Principal
 
-## Learn More
+1. **Seleção**: O usuário escolhe duas fontes para geração da nova playlist
+2. **Parametrização**: O usuário configura pesos e regras para cada música
+3. **Geração**: A aplicação cria uma playlist randomizada respeitando os parâmetros
+4. **Visualização**: O usuário visualiza a playlist gerada com estatísticas detalhadas
 
-To learn more about Next.js, take a look at the following resources:
+## ⚙️ Funcionalidades
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🎛️ Parametrização Avançada
+- **Peso (0.1 - 5.0)**: Controla a probabilidade da música aparecer
+- **Obrigatório/Opcional**: Força a presença da música na playlist
+- **Única/Repetida**: Permite ou impede repetições da mesma música
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 📊 Estatísticas
+- Duração total da playlist
+- Distribuição de músicas por fonte
+- Contagem de músicas obrigatórias vs opcionais
 
-## Deploy on Vercel
+### 🎲 Algoritmo Inteligente
+- Seleção probabilística baseada em pesos
+- Respeito às regras de obrigatoriedade
+- Controle de repetições por música
+- Embaralhamento final para variedade
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Tecnologias Utilizadas
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Frontend
+- **Next.js 15.1.3** - Framework React com App Router
+- **React 19** - Biblioteca para interfaces de usuário
+- **TypeScript** - Tipagem estática para JavaScript
+- **Tailwind CSS** - Framework CSS utilitário
+
+## 📦 Estrutura do Projeto
+
+\`\`\`
+playlist-mixer/
+├── app/
+│   ├── globals.css          # Estilos globais
+│   ├── layout.tsx           # Layout principal
+│   └── page.tsx             # Página inicial
+├── components/
+│   ├── ui/                  # Componentes base (shadcn/ui)
+│   ├── source-selector.tsx  # Seleção de fontes
+│   ├── music-parametrizer.tsx # Configuração de parâmetros
+│   └── playlist-generator.tsx # Geração de playlist
+├── README.md
+├── package.json
+├── tailwind.config.ts
+├── tsconfig.json
+└── next.config.js
+\`\`\`
+
+## 🚀 Como Executar
+
+Para executar o projeto localmente, siga os passos abaixo:
+
+### Instalação
+
+1. **Clone ou baixe o projeto**
+   \`\`\`bash
+   # Se usando git
+   git clone https://github.com/gcarucce10/playlist-mixer.git
+   cd playlist-mixer
+   \`\`\`
+
+2. **Instale as dependências**
+   \`\`\`bash
+   npm install --legacy-peer-deps
+   # ou
+   yarn install
+   \`\`\`
+
+3. **Execute o servidor de desenvolvimento**
+   \`\`\`bash
+   npm run dev
+   # ou
+   yarn dev
+   \`\`\`
+
+4. **Acesse a aplicação**
+   - Abra seu navegador em: `http://localhost:3000`
+
+## 🎵 Dados de Exemplo
+
+A aplicação inclui 4 fontes musicais mockadas:
+
+### Álbuns
+- **Abbey Road** - The Beatles (5 músicas)
+- **Dark Side of the Moon** - Pink Floyd (5 músicas)
+
+### Playlists
+
+- **Rock Classics** - Clássicos do rock (4 músicas)
+- **Chill Vibes** - Músicas relaxantes (4 músicas)
+
+
+## 📝 Requisitos Atendidos
+
+✅ **Aplicação apenas frontend**  
+✅ **Seleção de duas fontes**  
+✅ **Parametrização com pesos**  
+✅ **Sistema obrigatório/opcional**  
+✅ **Controle única/repetida**  
+✅ **Geração automática de playlist**  
+✅ **Interface responsiva**  
+✅ **Dados mockados como exemplo**  
+
