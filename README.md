@@ -49,7 +49,7 @@ O **Playlist Mixer** resolve o problema de criar playlists personalizadas de for
 
 ## 📦 Estrutura do Projeto
 
-\`\`\`
+```
 playlist-mixer/
 ├── app/
 │   ├── globals.css          # Estilos globais
@@ -65,7 +65,7 @@ playlist-mixer/
 ├── tailwind.config.ts
 ├── tsconfig.json
 └── next.config.js
-\`\`\`
+```
 
 ## 🚀 Como Executar
 
